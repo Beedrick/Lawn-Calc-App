@@ -11,6 +11,7 @@ def hello():
 @app.route("/calculate-quote", methods=["POST"])
 def calculate_quote():
     data = request.json
+    print("Received data:", data)
     size_m2 = data.get("size_m2", 0)
     grass_height = data.get("grass_height", "short")
     edging = data.get("edging", False)

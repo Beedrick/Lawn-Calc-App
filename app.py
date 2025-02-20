@@ -12,7 +12,7 @@ def hello():
 def calculate_quote():
     data = request.json
     print("Received data:", data)
-    size_m2 = data.get("size_m2", 0)
+    size_m2 = float(data.get("size_m2", 0))
     grass_height = data.get("grass_height", "short")
     edging = data.get("edging", False)
 

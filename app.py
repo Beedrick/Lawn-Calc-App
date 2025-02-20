@@ -4,6 +4,10 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/")
+def hello():
+    return "Hello, World!"
+
 @app.route("/calculate-quote", methods=["POST"])
 def calculate_quote():
     data = request.json

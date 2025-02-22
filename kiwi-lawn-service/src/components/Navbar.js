@@ -29,7 +29,7 @@ function Navbar() {
               <Link className="nav-link" to="/values">Values</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/calculator">Calculator</Link>
+              <Link className="nav-link" to="/calculator">Get Estimate</Link>
             </li>
           </ul>
         </div>

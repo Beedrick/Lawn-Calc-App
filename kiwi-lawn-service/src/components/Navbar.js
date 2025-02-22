@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css"; // Import custom CSS for styling
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link className="navbar-brand" to="/">Kiwi Lawn Services</Link>
+        <Link className="navbar-brand" to="/">
+          Kiwi Lawn Services
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -18,18 +21,26 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
+              <Link className="nav-link" to="/about">
+                About
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/values">Values</Link>
+              <Link className="nav-link" to="/values">
+                Values
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/calculator">Get Estimate</Link>
+              <Link className="nav-link" to="/calculator">
+                Get Estimate
+              </Link>
             </li>
           </ul>
         </div>

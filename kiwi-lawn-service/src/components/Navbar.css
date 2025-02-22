@@ -1,0 +1,52 @@
+/* Navbar Brand (Logo Text) */
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif; /* Modern sans-serif font */
+    font-size: 1.5rem; /* Slightly larger for prominence */
+    font-weight: 700; /* Bold for emphasis */
+    color: #28a745 !important; /* Green color for brand identity */
+    letter-spacing: 1px; /* Slight spacing for elegance */
+  }
+  
+  /* Navbar Links */
+  .nav-link {
+    font-family: 'Open Sans', sans-serif; /* Clean and readable font */
+    font-size: 1rem;
+    font-weight: 600; /* Semi-bold for clarity */
+    color: #333 !important; /* Dark gray for professionalism */
+    margin: 0 10px; /* Spacing between links */
+    text-transform: uppercase; /* Uppercase for a modern look */
+    letter-spacing: 1px; /* Spacing for elegance */
+    transition: color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover Effect for Links */
+  .nav-link:hover {
+    color: #28a745 !important; /* Green on hover for interactivity */
+  }
+  
+  /* Active Link Styling */
+  .nav-link.active {
+    color: #28a745 !important; /* Green for active page */
+    border-bottom: 2px solid #28a745; /* Underline effect */
+  }
+  
+  /* Navbar Toggler Icon */
+  .navbar-toggler {
+    border: none; /* Remove default border */
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none; /* Remove focus outline */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .navbar-brand {
+      font-size: 1.3rem; /* Slightly smaller on mobile */
+    }
+  
+    .nav-link {
+      font-size: 0.9rem; /* Smaller font size for mobile */
+      margin: 5px 0; /* Stack links vertically */
+    }
+  }

@@ -16,7 +16,7 @@ def calculate_quote():
     grass_height = data.get("grass_height", "short")
     edging = data.get("edging", False)
 
-    base_rate = 0.40  # Example rate per m²
+    base_rate = 0.25  # Example rate per m²
     height_multiplier = {"short": 1, "medium": 1.5, "overgrown": 2.5}
     edging_cost = 10 if edging else 0
 

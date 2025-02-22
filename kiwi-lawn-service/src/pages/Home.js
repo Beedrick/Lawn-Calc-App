@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import lawnVideo from './videos/lawn-video.mp4';
 import './Home.css';
 
 function Home() {
@@ -9,7 +8,7 @@ function Home() {
       <section className="hero-section">
         <div className="video-container">
           <video autoPlay playsInline loop muted className="background-video">
-            <source src={lawnVideo} type="video/mp4" />
+          <source src="/videos/lawn-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="overlay"></div>

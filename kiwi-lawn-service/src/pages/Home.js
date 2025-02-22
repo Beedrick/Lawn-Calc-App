@@ -8,7 +8,7 @@ function Home() {
     <div className="homepage">
       <section className="hero-section">
         <div className="video-container">
-          <video autoPlay loop muted className="background-video">
+          <video autoPlay playsInline loop muted className="background-video">
             <source src={lawnVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>

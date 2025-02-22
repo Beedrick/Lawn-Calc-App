@@ -8,7 +8,9 @@ function Home() {
       <section className="hero-section">
         <div className="video-container">
           <video autoPlay playsInline loop muted className="background-video">
-          <source src="/videos/lawn-video.mp4" type="video/mp4" />
+            <source src="/videos/lawn-video.mp4" type="video/mp4" />
+            <source src="/videos/lawn-video.webm" type="video/webm" />
+            <source src="/videos/lawn-video.ogv" type="video/ogg" />
             Your browser does not support the video tag.
           </video>
           <div className="overlay"></div>

@@ -7,6 +7,7 @@ import Calculator from "./pages/Calculator";
 import Navbar from "./components/Navbar";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import OurServices from "./pages/OurServices";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/values" element={<Values />} />
         <Route path="/calculator" element={<Calculator />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<OurServices />} />
       </Routes>
       <Footer /> {/* ✅ Footer added */}
     </Router>

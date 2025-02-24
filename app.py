@@ -6,12 +6,12 @@ CORS(app)
 
 # Pricing: per m² and one-off costs
 SERVICE_PRICING = {
-    "Lawn Mowing": {"type": "per_m2", "rate": 0.25},
-    "Gardening Services": {"type": "per_m2", "rate": 0.30},
-    "Hedge and Tree Trimming": {"type": "one_off", "rate": (150, 300)},
+    "Lawn Mowing": {"type": "per_m2", "rate": 0.15},
+    "Gardening Services": {"type": "per_m2", "rate": 0.10},
+    "Hedge and Tree Trimming": {"type": "one_off", "rate": (65, 100)},
     "Rubbish Removal (Big Clean-Ups)": {"type": "one_off", "rate": (200, 500)},
-    "Water Blasting": {"type": "one_off", "rate": (150, 250)},
-    "Yard Cleaning": {"type": "one_off", "rate": (100, 250)}
+    "Water Blasting": {"type": "one_off", "rate": (100, 200)},
+    "Yard Cleaning": {"type": "one_off", "rate": (55, 90)}
 }
 
 @app.route("/")

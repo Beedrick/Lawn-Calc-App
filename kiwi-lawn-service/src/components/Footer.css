@@ -8,6 +8,16 @@ html, body {
     display: flex;
     flex-direction: column;
     min-height: 84vh; /* Ensure the content area takes up full height */
+    
+  }
+
+  .main-container-type-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    min-height: 84vh; /* Ensure the content area takes up full height */
+    text-align: center; /* Ensures text inside is centered */
   }
   
   .content {

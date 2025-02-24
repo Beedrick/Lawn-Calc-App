@@ -6,7 +6,7 @@ CORS(app)
 
 # Pricing: per m² and one-off costs
 SERVICE_PRICING = {
-    "Lawn Mowing": {"type": "per_m2", "rate": 0.30},
+    "Lawn Mowing": {"type": "per_m2", "rate": 0.43},
     "Gardening Services": {"type": "per_m2", "rate": 0.10},
     "Hedge and Tree Trimming": {"type": "one_off", "rate": (65, 100)},
     "Rubbish Removal (Big Clean-Ups)": {"type": "one_off", "rate": (200, 500)},

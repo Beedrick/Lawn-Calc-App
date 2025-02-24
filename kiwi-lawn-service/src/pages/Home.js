@@ -7,7 +7,7 @@ function Home() {
     <div className="homepage">
       <section className="hero-section">
         <div className="video-container">
-          <video autoPlay playsInline loop muted className="background-video">
+          <video autoPlay playsInline poster="/images/KLS.png" preload="auto" loop muted className="background-video">
             <source src="/videos/lawn-video.mp4" type="video/mp4" />
             <source src="/videos/lawn-video.webm" type="video/webm" />
             <source src="/videos/lawn-video.ogv" type="video/ogg" />
@@ -44,6 +44,7 @@ function Home() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }

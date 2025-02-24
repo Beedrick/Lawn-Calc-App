@@ -19,7 +19,7 @@ function Calculator() {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="main-container">
       <h1 className="text-center text-success">Lawn Service Quote</h1>
       <div className="card p-4 shadow">
         <label className="form-label">Lawn Size (m²)</label>

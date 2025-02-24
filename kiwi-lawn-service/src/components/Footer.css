@@ -1,0 +1,47 @@
+/* Ensure the body and html elements fill the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 84vh; /* Ensure the content area takes up full height */
+  }
+  
+  .content {
+    flex: 1; /* This allows the content to take up available space and push the footer down */
+  }
+  
+  /* Footer styling */
+  .footer {
+    background: #013d2b; /* Dark blue-gray background */
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    width: 100%;
+  }
+  
+  /* Footer container max-width */
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Footer nav styling */
+  .footer-nav {
+    margin-top: 0.5rem;
+  }
+  
+  .footer-nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .footer-nav a:hover {
+    text-decoration: underline;
+  }
+  

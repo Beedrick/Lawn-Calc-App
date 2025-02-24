@@ -1,0 +1,59 @@
+.contact-page {
+  background-color: #f8f9fa; /* Light gray background */
+}
+
+.brand-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.brand-logo-container img {
+  max-width: 80%; /* Ensures the logo scales well */
+  height: auto;
+}
+
+.service-dropdown {
+  border: 1px solid #ced4da; /* Border for better definition */
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 5px;
+  position: relative;
+}
+
+.service-dropdown .dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-weight: 500;
+}
+
+.service-dropdown .dropdown-menu {
+  width: 100%;
+  max-height: 250px; /* Makes the dropdown scrollable */
+  overflow-y: auto;
+}
+
+.service-dropdown .dropdown-item {
+  padding: 10px;
+  font-size: 14px;
+  color: #495057;
+  background-color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.service-dropdown .dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.service-dropdown .form-check {
+  margin-right: 10px;
+}

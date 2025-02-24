@@ -4,7 +4,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Values from "./pages/Values";
 import Calculator from "./pages/Calculator";
-import Navbar from "./components/Navbar"; // ✅ Import Navbar
+import Navbar from "./components/Navbar";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/values" element={<Values />} />
         <Route path="/calculator" element={<Calculator />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer /> {/* ✅ Footer added */}
     </Router>
   );
 }

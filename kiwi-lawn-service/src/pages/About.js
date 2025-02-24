@@ -1,6 +1,6 @@
 function About() {
     return (
-      <div className="container mt-5">
+      <div className="main-container">
         <h1 className="display-4">About Us</h1>
         <p className="lead">
             At Kiwi Lawn Services, we’re just a couple of local blokes with a passion for keeping Kiwi lawns looking top-notch. 

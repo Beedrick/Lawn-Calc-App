@@ -3,7 +3,7 @@
     font-family: 'Montserrat', sans-serif; /* Modern sans-serif font */
     font-size: 1.5rem; /* Slightly larger for prominence */
     font-weight: 700; /* Bold for emphasis */
-    color: #28a745 !important; /* Green color for brand identity */
+    color: #0f8d2d !important; /* Green color for brand identity */
     letter-spacing: 1px; /* Slight spacing for elegance */
   }
   
@@ -26,8 +26,8 @@
   
   /* Active Link Styling */
   .nav-link.active {
-    color: #28a745 !important; /* Green for active page */
-    border-bottom: 2px solid #28a745; /* Underline effect */
+    color: #013d2b !important; /* Green for active page */
+    border-bottom: 2px solid #013d2b; /* Underline effect */
   }
   
   /* Navbar Toggler Icon */
@@ -50,3 +50,11 @@
       margin: 5px 0; /* Stack links vertically */
     }
   }
+
+  .social-icon {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+

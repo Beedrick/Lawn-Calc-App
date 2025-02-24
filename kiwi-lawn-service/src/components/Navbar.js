@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BsInstagram } from "react-icons/bs";
 import "./Navbar.css"; // Import custom CSS for styling
 
 function Navbar() {
@@ -40,6 +41,16 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link" to="/calculator">
                 Get Estimate
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">
+                Contact Us
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="https://www.instagram.com/kiwilawnservices/" target="_blank">
+                <BsInstagram className="social-icon"/>
               </Link>
             </li>
           </ul>

@@ -36,7 +36,7 @@ function Calculator() {
   };
 
   return (
-    <div className="container my-5">
+    <div className="main-container">
       <div className="card p-4 shadow">
         <h2 className="text-center text-success mb-4">Get a Quote</h2>
 

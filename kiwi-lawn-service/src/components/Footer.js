@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 Kiwi Lawn Services. All rights reserved.</p>
         <nav className="footer-nav">
           <Link to="#">Privacy Policy</Link>
           <Link to="#">Terms of Service</Link>

@@ -56,7 +56,7 @@ const About = () => {
       <ScrollAnimation />
       
       <div className="container-fluid main-container py-5">
-        <h1 className="display-4">About Us</h1>
+        <h1 className="text-success fade-in-title">About Us</h1>
         {sections.map((section, index) => (
           <div
             key={index}

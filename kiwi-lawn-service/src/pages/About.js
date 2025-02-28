@@ -5,21 +5,25 @@ import "./About.css";
 const About = () => {
   const [visibleSections, setVisibleSections] = useState([]);
 
-  useEffect(() => {
+  useEffect(() => {  
     const handleScroll = () => {
-      const sections = document.querySelectorAll(".fade-in-section");
-      sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-          setVisibleSections((prev) => [...new Set([...prev, index])]);
-        }
-      });
+      setTimeout(() => {
+        const sections = document.querySelectorAll(".fade-in-section");
+        sections.forEach((section, index) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            setVisibleSections((prev) => [...new Set([...prev, index])]);
+          }
+        });
+      }, 100); // Delay to ensure elements are properly positioned
     };
-
+  
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    handleScroll(); // Check on mount
+  
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
 
   const sections = [
     {
@@ -30,22 +34,22 @@ const About = () => {
     {
       title: "Our Approach",
       text: "As a two-man team, we take pride in delivering quality service with a no-fuss, straight-up approach.",
-      img: "/images/KLS-no-bg.png",
+      img: "/images/vintage-back2back-bg.png",
     },
     {
       title: "Our Values",
       text: "We believe in working hard, working fast, and—most importantly—working with integrity.",
-      img: "/images/KLS-no-bg.png",
+      img: "/images/trimming-bush-removebg-preview.png",
     },
     {
       title: "Customer Satisfaction",
       text: "Customer satisfaction is at the heart of what we do because, at the end of the day, we’re not just here to mow lawns—we’re here to build trust and good relationships with our community.",
-      img: "/images/KLS-no-bg.png",
+      img: "/images/3-vintage-lawn-bg.png",
     },
     {
       title: "Our Commitment",
       text: "We’re a small band, hustling for a living, and we appreciate every customer who backs the little guys. Let us take care of your lawn, and we’ll make sure it’s looking sharp in no time!",
-      img: "/images/KLS-no-bg.png",
+      img: "/images/grass-cut-horizon.jpg",
     },
   ];
 

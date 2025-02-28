@@ -7,7 +7,7 @@ function Home() {
     <div className="homepage">
       <section className="hero-section">
         <div className="video-container">
-          <video autoPlay playsInline poster="/images/KLS.png" preload="auto" loop muted className="background-video">
+          <video autoPlay playsInline preload="auto" loop muted className="background-video">
             <source src="/videos/lawn-video.mp4" type="video/mp4" />
             <source src="/videos/lawn-video.webm" type="video/webm" />
             <source src="/videos/lawn-video.ogv" type="video/ogg" />
@@ -18,7 +18,7 @@ function Home() {
         <div className="hero-content">
           <h1 className="hero-tagline">Precision. Passion. Perfection – The Kiwi Lawn Services Way.</h1>
           <div className="cta-buttons">
-            <Link to="/calculator" className="btn btn-primary">Get a Free Estimate</Link>
+            <Link to="/contact" className="btn btn-primary">Request a Free Quote</Link>
             <Link to="/gallery" className="btn btn-secondary">View Our Work</Link>
           </div>
         </div>

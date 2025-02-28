@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./About.css";
-import ScrollAnimation from "./ScrollAnimation"; // <-- import the scroll animation
 
 const About = () => {
   const [visibleSections, setVisibleSections] = useState([]);
@@ -52,9 +51,6 @@ const About = () => {
 
   return (
     <>
-      {/* The scroll animation overlay */}
-      <ScrollAnimation />
-      
       <div className="container-fluid main-container py-5">
         <h1 className="text-success fade-in-title">About Us</h1>
         {sections.map((section, index) => (
@@ -69,25 +65,25 @@ const About = () => {
                     <img
                       src={section.img}
                       alt={section.title}
-                      className="img-fluid fade-in-image"
+                      className="img-fluid fade-in-image larger-image"
                     />
                   </div>
                   <div className="col-md-6">
-                    <h2 className="h4">{section.title}</h2>
-                    <p className="lead">{section.text}</p>
+                    <h2 className="h3 large-title">{section.title}</h2>
+                    <p className="lead large-text">{section.text}</p>
                   </div>
                 </>
               ) : (
                 <>
                   <div className="col-md-6">
-                    <h2 className="h4">{section.title}</h2>
-                    <p className="lead">{section.text}</p>
+                    <h2 className="h3 large-title">{section.title}</h2>
+                    <p className="lead large-text">{section.text}</p>
                   </div>
                   <div className="col-md-6 text-center">
                     <img
                       src={section.img}
                       alt={section.title}
-                      className="img-fluid fade-in-image"
+                      className="img-fluid fade-in-image larger-image"
                     />
                   </div>
                 </>

@@ -39,3 +39,29 @@
     transform: translateY(0);
   }
 }
+
+/* About.css */
+.larger-image {
+  width: 100%;
+  max-width: 800px; /* Adjust the size of the images */
+  height: auto;
+}
+
+.large-title {
+  font-size: 2.5rem; /* Larger font size for titles */
+  font-weight: bold;
+}
+
+.large-text {
+  font-size: 1.25rem; /* Larger font size for text */
+}
+
+/* Adjusting fade-in effects for better visibility */
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+}

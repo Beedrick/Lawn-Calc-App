@@ -1,50 +1,52 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from flask_mail import Mail, Message
+import os
+
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all origins
 
-# Pricing: per m² and one-off costs
-SERVICE_PRICING = {
-    "Lawn Mowing": {"type": "per_m2", "rate": 0.33},
-    "Gardening Services": {"type": "per_m2", "rate": 0.10},
-    "Hedge and Tree Trimming": {"type": "one_off", "rate": (65, 100)},
-    "Rubbish Removal (Big Clean-Ups)": {"type": "one_off", "rate": (200, 500)},
-    "Water Blasting": {"type": "one_off", "rate": (100, 200)},
-    "Yard Cleaning": {"type": "one_off", "rate": (55, 90)}
-}
+# ✅ Add missing email configurations
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 587
+app.config["MAIL_USE_TLS"] = True
+app.config["MAIL_USE_SSL"] = False
+app.config["MAIL_USERNAME"] = os.getenv("MAIL_USERNAME")  # Your Gmail address
+app.config["MAIL_PASSWORD"] = os.getenv("MAIL_PASSWORD")  # Your Gmail App Password
+app.config["MAIL_DEFAULT_SENDER"] = os.getenv("MAIL_USERNAME")  # Ensure sender is set
 
-@app.route("/")
-def hello():
-    return "Hello, World!"
+mail = Mail(app)
 
-@app.route("/calculate-quote", methods=["POST"])
-def calculate_quote():
+@app.route("/send-email", methods=["POST"])
+def send_email():
     data = request.json
-    print("Received data:", data)
+    name = data.get("name")
+    email = data.get("email")
+    phone = data.get("phone")
+    message = data.get("message")
+    services = ", ".join(data.get("services", []))
 
-    size_m2 = float(data.get("size_m2", 0))
-    grass_height = data.get("grass_height", "short")
-    selected_services = data.get("selected_services", [])
+    if not name or not email:
+        return jsonify({"error": "Name and Email are required"}), 400
 
-    # Height multipliers
-    height_multiplier = {"short": 1, "medium": 1.15, "overgrown": 2.0}
-
-    estimated_cost = 0
-
-    for service in selected_services:
-        if service in SERVICE_PRICING:
-            service_type = SERVICE_PRICING[service]["type"]
-            rate = SERVICE_PRICING[service]["rate"]
-
-            if service_type == "per_m2":
-                estimated_cost += rate * size_m2
-            elif service_type == "one_off":
-                estimated_cost += sum(rate) / 2  # Use an average for now
-
-    estimated_cost *= height_multiplier.get(grass_height, 1)
-
-    return jsonify({"estimated_cost": round(estimated_cost, 2)})
+    try:
+        msg = Message("New Service Request",
+                      sender=app.config["MAIL_DEFAULT_SENDER"],  # ✅ Ensure sender is set
+                      recipients=["lawnserviceskiwi@gmail.com"])
+        msg.body = f"""
+        Name: {name}
+        Email: {email}
+        Phone: {phone}
+        Services: {services}
+        
+        Message:
+        {message}
+        """
+        mail.send(msg)
+        return jsonify({"message": "Email sent successfully!"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)))  # ✅ Make port dynamic for Heroku

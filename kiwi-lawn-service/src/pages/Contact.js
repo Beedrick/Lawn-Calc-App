@@ -31,7 +31,7 @@ const ContactUs = () => {
     };
 
     try {
-      const response = await fetch("https://lawn-calc-app-39609e86578e.herokuapp.com/", {
+      const response = await fetch("https://lawn-calc-app-39609e86578e.herokuapp.com/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

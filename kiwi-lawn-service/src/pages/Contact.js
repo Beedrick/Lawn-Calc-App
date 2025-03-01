@@ -39,6 +39,8 @@ const ContactUs = () => {
 
       if (response.ok) {
         alert("Your request has been sent!");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setSelectedServices([]);
       } else {
         alert("Failed to send the email.");
       }
@@ -47,6 +49,11 @@ const ContactUs = () => {
       alert("Error sending the request.");
     }
   };
+
+  const handleClearForm = () => {
+    setFormData({ name: "", email: "", phone: "", message: "" });
+    setSelectedServices([]);            
+  }
 
   return (
     <Container fluid className="contact-page">
@@ -61,17 +68,17 @@ const ContactUs = () => {
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="name" className="mb-3">
               <Form.Label>Full Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter your name" required onChange={handleChange} />
+              <Form.Control type="text" placeholder="Enter your name" required value={formData.name} onChange={handleChange} />
             </Form.Group>
 
             <Form.Group controlId="email" className="mb-3">
               <Form.Label>Email Address</Form.Label>
-              <Form.Control type="email" placeholder="Enter your email" required onChange={handleChange} />
+              <Form.Control type="email" placeholder="Enter your email" required value={formData.email} onChange={handleChange} />
             </Form.Group>
 
             <Form.Group controlId="phone" className="mb-3">
               <Form.Label>Phone Number</Form.Label>
-              <Form.Control type="tel" placeholder="Enter your phone number" onChange={handleChange} />
+              <Form.Control type="tel" placeholder="Enter your phone number" value={formData.phone} onChange={handleChange} />
             </Form.Group>
 
             <Form.Group controlId="service" className="mb-3">
@@ -98,7 +105,7 @@ const ContactUs = () => {
 
             <Form.Group controlId="message" className="mb-3">
               <Form.Label>Describe Your Request</Form.Label>
-              <Form.Control as="textarea" rows={4} placeholder="Provide details" onChange={handleChange} />
+              <Form.Control as="textarea" rows={4} placeholder="Provide details" value={formData.message} onChange={handleChange} />
             </Form.Group>
 
             <Button variant="primary" type="submit" className="w-100">

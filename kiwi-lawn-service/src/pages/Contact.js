@@ -5,44 +5,75 @@ const servicesList = ["Lawn Mowing", "Water Blasting", "Maintenance", "Hedge Tri
 
 const ContactUs = () => {
   const [selectedServices, setSelectedServices] = useState([]);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-  // Toggle selection of a service
   const handleServiceSelect = (service) => {
     setSelectedServices((prev) =>
       prev.includes(service) ? prev.filter((s) => s !== service) : [...prev, service]
     );
   };
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const data = {
+      ...formData,
+      services: selectedServices,
+    };
+
+    try {
+      const response = await fetch("https://lawn-calc-app-39609e86578e.herokuapp.com/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert("Your request has been sent!");
+      } else {
+        alert("Failed to send the email.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error sending the request.");
+    }
+  };
+
   return (
     <Container fluid className="contact-page">
       <Row className="align-items-center min-vh-100">
-        {/* Left Side: Contact Form */}
         <Col md={6} className="p-5">
           <h2 className="mb-4">Get in Touch With Us</h2>
+          <h4 className="mb-4">We respond quickly!</h4>
           <p className="text-muted">
-            Let us know how we can assist you. Fill out the form below, and we’ll get back to you shortly.
+            Let us know how we can assist you. Fill out the form below, and we’ll get back to you in 2 business hours.
           </p>
 
-          <Form>
-            {/* Name */}
+          <Form onSubmit={handleSubmit}>
             <Form.Group controlId="name" className="mb-3">
               <Form.Label>Full Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter your name" required />
+              <Form.Control type="text" placeholder="Enter your name" required onChange={handleChange} />
             </Form.Group>
 
-            {/* Email */}
             <Form.Group controlId="email" className="mb-3">
               <Form.Label>Email Address</Form.Label>
-              <Form.Control type="email" placeholder="Enter your email" required />
+              <Form.Control type="email" placeholder="Enter your email" required onChange={handleChange} />
             </Form.Group>
 
-            {/* Phone */}
             <Form.Group controlId="phone" className="mb-3">
               <Form.Label>Phone Number</Form.Label>
-              <Form.Control type="tel" placeholder="Enter your phone number" />
+              <Form.Control type="tel" placeholder="Enter your phone number" onChange={handleChange} />
             </Form.Group>
 
-            {/* Multi-Select Service Section */}
             <Form.Group controlId="service" className="mb-3">
               <Form.Label>Services Needed</Form.Label>
               <DropdownButton
@@ -60,32 +91,22 @@ const ContactUs = () => {
                       onChange={() => handleServiceSelect(service)}
                       className="me-2"
                     />
-                    
                   </Dropdown.Item>
                 ))}
               </DropdownButton>
             </Form.Group>
 
-            {/* Additional Details */}
             <Form.Group controlId="message" className="mb-3">
               <Form.Label>Describe Your Request</Form.Label>
-              <Form.Control as="textarea" rows={4} placeholder="Provide details" />
+              <Form.Control as="textarea" rows={4} placeholder="Provide details" onChange={handleChange} />
             </Form.Group>
 
-            {/* File Upload */}
-            <Form.Group controlId="file" className="mb-3">
-              <Form.Label>Upload Image (Optional)</Form.Label>
-              <Form.Control type="file" />
-            </Form.Group>
-
-            {/* Submit Button */}
             <Button variant="primary" type="submit" className="w-100">
               Submit Request
             </Button>
           </Form>
         </Col>
 
-        {/* Right Side: Brand Logo */}
         <Col md={6} className="brand-logo-container p-5">
           <img src="/images/KLS-no-bg.png" alt="Brand Logo" className="img-fluid" />
         </Col>

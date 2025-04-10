@@ -49,4 +49,6 @@ def send_email():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)))  # ✅ Make port dynamic for Heroku
+    app.run(host="0.0.0.0", port=3000)  # ✅ Make port dynamic for Heroku
+
+#int(os.getenv("PORT", 5000))

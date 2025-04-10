@@ -87,7 +87,7 @@ const ContactUs = () => {
                 id="dropdown-service"
                 title={selectedServices.length > 0 ? selectedServices.join(", ") : "Select Services"}
                 variant="outline-secondary"
-                className="w-100 service-dropdown"
+                className="service-dropdown"
               >
                 {servicesList.map((service, index) => (
                   <Dropdown.Item key={index} as="button" className="d-flex align-items-center">
